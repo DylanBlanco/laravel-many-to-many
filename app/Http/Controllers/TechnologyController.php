@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Technology;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use App\Models\Technology;
 
 class TechnologyController extends Controller
 {
@@ -12,7 +14,9 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+        $technologies = Technology::all();
+
+        return view('technologies.index', compact('technologies'));
     }
 
     /**
@@ -20,7 +24,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+        return view('technologies.create');
     }
 
     /**
@@ -28,7 +32,16 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newTechnology = new Technology();
+        $newTechnology->name = $data['name'];
+        $newTechnology->type = $data['type'];
+        $newTechnology->date_create = $data['date_create'];
+        $newTechnology->description = $data['description'];
+        $newTechnology->save();
+
+        return redirect()->route('technologies.index', $newTechnology->id);
     }
 
     /**
@@ -36,7 +49,7 @@ class TechnologyController extends Controller
      */
     public function show(Technology $technology)
     {
-        //
+        return view('technologies.show', compact('technology'));
     }
 
     /**
@@ -44,7 +57,7 @@ class TechnologyController extends Controller
      */
     public function edit(Technology $technology)
     {
-        //
+        return view('technologies.edit', compact('technology'));
     }
 
     /**
@@ -52,7 +65,11 @@ class TechnologyController extends Controller
      */
     public function update(Request $request, Technology $technology)
     {
-        //
+        $data = $request->all();
+
+        $technology->update($data);
+
+        return redirect()->route('technologies.show', $technology->id);
     }
 
     /**
@@ -60,6 +77,8 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        //
+        $technology->delete();
+
+        return redirect()->route('technologies.index');
     }
 }

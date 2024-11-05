@@ -7,6 +7,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 // use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TechnologyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,6 @@ Route::prefix('admin')
     // Route::resource('projects', AdminProjectController::class);
 });
 Route::resource('projects', ProjectController::class);
+Route::resource('technologies', TechnologyController::class);
 
 require __DIR__.'/auth.php';

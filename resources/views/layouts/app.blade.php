@@ -27,8 +27,7 @@
                                 <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
                             </li>
                             <li class="nav-item">
-                                {{-- <a class="nav-link" href="{{ route('technologies.index') }}">Technologies</a> --}}
-                                <a class="nav-link" href="#">Technologies</a>
+                                <a class="nav-link" href="{{ route('technologies.index') }}">Technologies</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">

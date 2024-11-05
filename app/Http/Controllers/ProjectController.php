@@ -14,7 +14,7 @@ class ProjectController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
+    {
         $projects = Project::all();
 
         return view('projects.index', compact('projects'));
@@ -40,8 +40,6 @@ class ProjectController extends Controller
         $newProject->author = $data['author'];
         $newProject->date_create = $data['date_create'];
         $newProject->description = $data['description'];
-        $newProject->date_create = $data['create_at'];
-        $newProject->description = $data['update_at'];
         $newProject->save();
 
         return redirect()->route('projects.show', $newProject->id);
