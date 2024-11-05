@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    // protected $fillable = ['name', 'author', 'date_create', 'description'];
+
+    // public function technologies()
+    // {
+    //     return $this->belongsToMany(Technology::class);
+    // }
 }

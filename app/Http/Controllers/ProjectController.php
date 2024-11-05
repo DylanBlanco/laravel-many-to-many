@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +14,7 @@ class ProjectController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {   
         $projects = Project::all();
 
         return view('projects.index', compact('projects'));
