@@ -22,11 +22,11 @@
 
                 <div class="mb-3">
                   <label for="name" class="form-label">Nome</label>
-                  <input value="{{ $technology->name }}" type="text" class="form-control" id="name" name="name">
+                  <input value="{{ $technology->name }}" type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3">
                     <label for="type" class="form-label">Tipo</label>
-                    <input value="{{ $technology->type }}" type="text" class="form-control" id="type" name="type">
+                    <input value="{{ $technology->type }}" type="text" class="form-control" id="type" name="type" required>
                 </div>
                 <div class="mb-3">
                     <label for="date_create" class="form-label">Data di Creazione</label>
