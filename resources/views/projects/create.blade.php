@@ -16,9 +16,13 @@
     </div>
     <div class="row my-5">
         <div class="col">
-            <form method="post" action="{{ route('projects.store') }}">
+            <form method="post" action="{{ route('projects.store') }}" enctype="multipart/form-data">
                 @csrf
 
+                <div class="mb-3">
+                  <label for="image" class="form-label">Carica Immagine</label>
+                  <input type="file" class="form-control" id="image" name="image">
+                </div>
                 <div class="mb-3">
                   <label for="title" class="form-label">Titolo</label>
                   <input type="text" class="form-control" id="title" name="title">

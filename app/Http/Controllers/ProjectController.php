@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 // Models
 use App\Models\Project;
 
+use Illuminate\Support\Facades\Storage;
+
 class ProjectController extends Controller
 {
     /**
@@ -33,14 +35,17 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
 
+        
+        $data = $request->all();
+        
         $newProject = new Project;
         $newProject->title = $data['title'];
         $newProject->author = $data['author'];
         $newProject->date_create = $data['date_create'];
         $newProject->description = $data['description'];
         $newProject->save();
+        $img_path = Storage::put('uploads', $data('image'));
 
         return redirect()->route('projects.show', $newProject->id);
     }

@@ -16,7 +16,7 @@
     </div>
     <div class="row my-5">
         <div class="col">
-            <form method="post" action="{{ route('projects.store') }}">
+            <form method="post" action="{{ route('projects.store') }}" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
 
