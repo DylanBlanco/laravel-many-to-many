@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
             $table->foreignId('project_id')
                   ->references('id')
-                  ->on('projects');
+                  ->on('projects')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+
             $table->foreignId('technology_id')
                   ->references('id')
-                  ->on('technologies');
+                  ->on('technologies')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+
             $table->timestamps();
         });
         // Schema::create('project_technology', function (Blueprint $table) {

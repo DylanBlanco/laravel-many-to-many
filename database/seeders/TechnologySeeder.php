@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 //Models
 use App\Models\Technology;
+use Illuminate\Support\Facades\Schema;
 
 class TechnologySeeder extends Seeder
 {
@@ -15,12 +16,16 @@ class TechnologySeeder extends Seeder
      */
     public function run(): void
     {
-        Technology::truncate();
+        Schema::withoutForeignKeyConstraints(function() {
+            Technology::truncate();
+        });
+        // Technology::truncate();
 
         for ($i=0; $i<10; $i++) { 
             
             Technology::create([
-                'name' => fake()->sentence(),
+                // 'name' => fake()->name(),
+                'name' => fake()->words(rand(1,5), true),
                 'type' => fake()->sentence(),
                 'date_create' => fake()->date(),
                 'description' => fake()->paragraph()
