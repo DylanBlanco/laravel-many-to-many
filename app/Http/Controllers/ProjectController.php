@@ -44,8 +44,9 @@ class ProjectController extends Controller
         $newProject->author = $data['author'];
         $newProject->date_create = $data['date_create'];
         $newProject->description = $data['description'];
+        // $newProject->image = Storage::put('uploads', $data('image'));
         $newProject->save();
-        $img_path = Storage::put('uploads', $data('image'));
+        // $img_path = Storage::put('uploads', $data('image'));
 
         return redirect()->route('projects.show', $newProject->id);
     }

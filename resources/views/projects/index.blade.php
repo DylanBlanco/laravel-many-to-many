@@ -27,6 +27,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <th scope="col">#</th>
@@ -67,6 +68,7 @@
                         <td>
                             <a href="{{ route('projects.create') }}" class="btn btn-success  w-100">Crea Nuovo Project</a>
                         </td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

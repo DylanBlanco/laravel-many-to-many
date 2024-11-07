@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('project_technology', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('project_id')
-                  ->references('id')
-                  ->on('projects')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade');
+            Schema::create('project_technology', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('project_id')
+                    ->references('id')
+                    ->on('projects')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
 
-            $table->foreignId('technology_id')
-                  ->references('id')
-                  ->on('technologies')
-                  ->onUpdate('cascade')
-                  ->onDelete('cascade');
+                $table->foreignId('technology_id')
+                    ->references('id')
+                    ->on('technologies')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
 
-            $table->timestamps();
-        });
+                $table->timestamps();
+            });
         // Schema::create('project_technology', function (Blueprint $table) {
         //     $table->id();
         //     $table->foreignId('project_id')->constrained()->onDelete('cascade');
