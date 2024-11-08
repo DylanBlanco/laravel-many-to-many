@@ -16,7 +16,7 @@
     </div>
     <div class="row my-5">
         <div class="col">
-            <form method="post" action="{{ route('projects.update', $project->id) }}">
+            <form method="post" action="{{ route('projects.update', $project->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 

@@ -40,15 +40,16 @@ class ProjectController extends Controller
         $data = $request->all();
         
         $newProject = new Project;
+        $newProject->image = Storage::put('uploads', $data['image']);
+        // $newProject->image = Storage::disk('public')->put('uploads', $data['image']);
         $newProject->title = $data['title'];
         $newProject->author = $data['author'];
         $newProject->date_create = $data['date_create'];
         $newProject->description = $data['description'];
-        // $newProject->image = Storage::put('uploads', $data('image'));
-        $newProject->save();
-        // $img_path = Storage::put('uploads', $data('image'));
 
-        return redirect()->route('projects.show', $newProject->id);
+        $newProject->save();
+
+        return redirect()->route('projects.index', $newProject->id);
     }
 
     /**
@@ -88,4 +89,4 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index');
     }
-}
+}   

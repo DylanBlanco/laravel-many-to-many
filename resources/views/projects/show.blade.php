@@ -20,6 +20,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Immagine</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Autore</th>
                         <th scope="col">Data Creazione</th>
@@ -29,6 +30,9 @@
                 <tbody>
                     <tr>
                         <th scope="row"> {{ $project->id }} </th>
+                        <td>
+                            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" style="width: 250px">
+                        </td>
                         <td> {{ $project->title }} </td>
                         <td> {{ $project->author }} </td>
                         <td> {{ $project->date_create }} </td>

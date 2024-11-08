@@ -34,4 +34,6 @@ Route::prefix('admin')
 Route::resource('projects', ProjectController::class);
 Route::resource('technologies', TechnologyController::class);
 
+// Route::post('/upload-image', [ProjectController::class, 'upload-image'])->name('upload.image');
+
 require __DIR__.'/auth.php';

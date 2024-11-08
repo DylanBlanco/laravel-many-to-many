@@ -23,6 +23,7 @@ class ProjectSeeder extends Seeder
         for ($i=0; $i< 20; $i++) { 
             
             Project::create([
+                // 'image' => '',
                 'title' => fake()->sentence(),
                 'author' => fake()->name(),
                 'date_create' => fake()->date(),
